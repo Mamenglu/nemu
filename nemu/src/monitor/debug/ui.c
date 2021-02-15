@@ -38,6 +38,7 @@ static int cmd_q(char *args) {
 
 static int cmd_help(char *args);
 static int cmd_si(char *args);
+static int cmd_info(char *args);
 
 static struct {
 	char *name;
@@ -48,6 +49,7 @@ static struct {
 	{ "c", "Continue the execution of the program", cmd_c },
 	{ "q", "Exit NEMU", cmd_q },
 	{ "si", "Step over", cmd_si},
+	{ "info", "Printf register or watch point", cmd_info},
 	/* TODO: Add more commands */
 
 };
@@ -76,28 +78,22 @@ static int cmd_help(char *args) {
 	}
 	return 0;
 }
-/*
-static int cmd_si(char *args){
-	char *arg=strtok(args," ");
-	if(strcmp(arg, cmd_table[3].name) == 0){
-		int n;
-		char *str=strtok(NULL," ");
-		n=atoi(str);
-		int i;
-		for( i=0;i<3;i++)
-		{
-			int addr=swaddr()
-		}
-	}
-	return 0;
-}
-*/
+
 static int cmd_si(char *args) {
-	char *arg=strtok(args," ");
+	char *arg=strtok(NULL," ");
 	if(arg== NULL) 
 		cpu_exec(1);
 	else 
 		cpu_exec(atoi(arg));
+	return 0;
+}
+
+static int cmd_info(char *args){
+	char *arg=strtok(NULL," ");
+	if(strcmp(arg,"r")==0)
+	{
+		printf("%s-%x","eax",cpu.eax);
+	}
 	return 0;
 }
 
