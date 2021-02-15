@@ -92,14 +92,14 @@ static int cmd_info(char *args){
 	char *arg=strtok(NULL," ");
 	if(strcmp(arg,"r")==0)
 	{
-		printf("%s	0x%x\n", "%eax", cpu.eax);
-		printf("%s	0x%x\n", "%ecx", cpu.ecx);
-		printf("%s	0x%x\n", "%edx", cpu.edx);
-		printf("%s	0x%x\n", "%ebx", cpu.ebx);
-		printf("%s	0x%x\n", "%esp", cpu.esp);
-		printf("%s	0x%x\n", "%ebp", cpu.ebp);
-		printf("%s	0x%x\n", "%esi", cpu.esi);
-		printf("%s	0x%x\n", "%edi", cpu.edi);
+		printf("%s	0x%8x\n", "%eax", cpu.eax);
+		printf("%s	0x%8x\n", "%ecx", cpu.ecx);
+		printf("%s	0x%8x\n", "%edx", cpu.edx);
+		printf("%s	0x%8x\n", "%ebx", cpu.ebx);
+		printf("%s	0x%8x\n", "%esp", cpu.esp);
+		printf("%s	0x%8x\n", "%ebp", cpu.ebp);
+		printf("%s	0x%8x\n", "%esi", cpu.esi);
+		printf("%s	0x%8x\n", "%edi", cpu.edi);
 	}
 	else 
 		return 0;
