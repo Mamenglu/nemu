@@ -92,7 +92,7 @@ static int cmd_info(char *args){
 	char *arg=strtok(NULL," ");
 	if(strcmp(arg,"r")==0)
 	{
-		printf("%s-%x\n","eax",cpu.eax);
+		printf("%s-%x\n","eax", cpu.eax);
 	}
 	return 0;
 }
