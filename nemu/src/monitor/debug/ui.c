@@ -93,9 +93,11 @@ static int cmd_si(char *args){
 }
 */
 static int cmd_si(char *args) {
-	char *arg=strtok(NULL," ");
-	if(arg== NULL) cpu_exec(1);
-	else cpu_exec(atoi(arg));
+	char *arg=strtok(args," ");
+	if(arg== NULL) 
+		cpu_exec(1);
+	else 
+		cpu_exec(atoi(arg));
 	return 0;
 }
 
