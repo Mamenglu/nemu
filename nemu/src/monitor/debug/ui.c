@@ -47,7 +47,7 @@ static struct {
 	{ "help", "Display informations about all supported commands", cmd_help },
 	{ "c", "Continue the execution of the program", cmd_c },
 	{ "q", "Exit NEMU", cmd_q },
-	{ "si", "Single step", cmd_si},
+	{ "si", "Step over", cmd_si},
 	/* TODO: Add more commands */
 
 };
@@ -76,7 +76,7 @@ static int cmd_help(char *args) {
 	}
 	return 0;
 }
-
+/*
 static int cmd_si(char *args){
 	char *arg=strtok(args," ");
 	if(strcmp(arg, cmd_table[3].name) == 0){
@@ -86,9 +86,15 @@ static int cmd_si(char *args){
 		int i;
 		for( i=0;i<3;i++)
 		{
-			printf("hello\n");
+			int addr=swaddr()
 		}
 	}
+	return 0;
+}
+*/
+static int cmd_si(char *args) {
+	if(args == NULL) cpu_exec(1);
+	else cpu_exec(atoi(args));
 	return 0;
 }
 
