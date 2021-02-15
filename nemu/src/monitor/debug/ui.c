@@ -84,7 +84,7 @@ static int cmd_si(char *args){
 		char *str=strtok(NULL," ");
 		n=atoi(str);
 		int i;
-		for( i=0;i<n;i++)
+		for( i=0;i<3;i++)
 		{
 			printf("hello\n");
 		}
