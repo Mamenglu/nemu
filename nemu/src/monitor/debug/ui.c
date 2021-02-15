@@ -81,8 +81,8 @@ static int cmd_si(char *args){
 	char *arg=strtok(args," ");
 	if(strcmp(arg, cmd_table[3].name) == 0){
 		int n;
-		arg=strtok(NULL," ");
-		n=atoi(arg);
+		char *str=strtok(NULL," ");
+		n=atoi(str);
 		int i;
 		for( i=0;i<n;i++)
 		{
